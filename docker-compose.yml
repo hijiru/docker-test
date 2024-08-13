@@ -1,0 +1,33 @@
+version: '3.7'  
+services:   
+  mongo:    
+    container_name: mongo
+    hostname: mongo
+    image: mongo:latest
+    volumes:
+      - /data/mongo/db:/data/db
+      - /data/mongo/conf:/data/configdb
+    environment:
+      MONGO_INITDB_DATABASE: myuser
+      MONGO_INITDB_USERNAME: myuser
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: 1234
+
+    logging:
+      driver: 'json-file'
+      options:
+        max-file: '10'
+        max-size: '1024m'
+    ports:
+      - "27017:27017"
+    networks:
+      - mongo-net
+    restart: always
+    command: ["mongod", "--oplogSize=1024", "--wiredTigerCacheSizeGB=1", "--auth", "--noscripting"]    
+    env_file:
+      - .env
+
+networks:
+  mongo-net:
+      driver: bridge
+      name: mongo-net
