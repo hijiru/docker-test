@@ -1,6 +1,6 @@
-version: '3.7'  
-services:   
-  mongo:    
+version: '3.7'
+services:
+  mongo:
     container_name: mongo
     hostname: mongo
     image: mongo:latest
@@ -23,11 +23,18 @@ services:
     networks:
       - mongo-net
     restart: always
-    command: ["mongod", "--oplogSize=1024", "--wiredTigerCacheSizeGB=1", "--auth", "--noscripting"]    
+    command:
+      [
+        "mongod",
+        "--oplogSize=1024",
+        "--wiredTigerCacheSizeGB=1",
+        "--auth",
+        "--noscripting"
+      ]
     env_file:
       - .env
 
 networks:
   mongo-net:
-      driver: bridge
-      name: mongo-net
+    driver: bridge
+    name: mongo-net

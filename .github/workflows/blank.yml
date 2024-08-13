@@ -34,27 +34,27 @@ jobs:
         run: |
           echo Add other actions to build,
           echo test, and deploy your project.
-                    - name: Docker compose tests run
-                    # You may pin to the exact commit or the version.
-                    # uses: cloudposse/github-action-docker-compose-test-run@885bb157bac4a43ff80c24bc4df852635e348a03
-                    uses: cloudposse/github-action-docker-compose-test-run@0.2.0
-                    with:
-                      # Working directory
-                      workdir: # optional, default is ./
-                      # Docker compose file
-                      file: 
-                      # Service run tests inside
-                      service: 
-                      # Entrypoint
-                      entrypoint: # optional, default is /bin/sh
-                      # Command to run tests
-                      command: 
-                      # Docker compose version
-                      docker-compose-version: # optional, default is 1.29.2
-                      # Docker registry
-                      registry: 
-                      # Docker login
-                      login: # optional, default is 
-                      # Docker password
-                      password: # optional, default is 
+                    # - name: Docker compose tests run
+                    # # You may pin to the exact commit or the version.
+                    # # uses: cloudposse/github-action-docker-compose-test-run@885bb157bac4a43ff80c24bc4df852635e348a03
+                    # uses: cloudposse/github-action-docker-compose-test-run@0.2.0
+                    # with:
+                    #   # Working directory
+                    #   workdir: # optional, default is ./
+                    #   # Docker compose file
+                    #   file: 
+                    #   # Service run tests inside
+                    #   service: 
+                    #   # Entrypoint
+                    #   entrypoint: # optional, default is /bin/sh
+                    #   # Command to run tests
+                    #   command: 
+                    #   # Docker compose version
+                    #   docker-compose-version: # optional, default is 1.29.2
+                    #   # Docker registry
+                    #   registry: 
+                    #   # Docker login
+                    #   login: # optional, default is 
+                    #   # Docker password
+                    #   password: # optional, default is 
                       
