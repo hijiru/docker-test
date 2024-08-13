@@ -31,8 +31,6 @@ services:
         "--auth",
         "--noscripting"
       ]
-    env_file:
-      - .env
 
 networks:
   mongo-net:
