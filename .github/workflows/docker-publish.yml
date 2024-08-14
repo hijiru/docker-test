@@ -29,3 +29,5 @@ jobs:
       run: |
         docker-compose -f docker-compose.yml pull
         docker-compose -f docker-compose.yml up -d
+        sleep 300  # 5分钟
+        docker-compose -f docker-compose.yml down
